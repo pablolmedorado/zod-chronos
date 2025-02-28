@@ -1,0 +1,64 @@
+{
+  "name": "zod-chronos",
+  "version": "0.1.0",
+  "description": "Zod schemas for the Temporal API. Provides type-safe validation and parsing for Temporal objects.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "dev": "vitest",
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "format": "biome format --write .",
+    "lint": "biome lint --write .",
+    "check": "biome check --write .",
+    "prepare": "husky",
+    "precommit": "lint-staged",
+    "prepush": "npm run test"
+  },
+  "lint-staged": {
+    "*.{js,ts,json}": "biome check --write"
+  },
+  "keywords": ["zod", "temporal", "validation", "typescript", "schema", "parser"],
+  "author": {
+    "name": "Pablo Olmedo Dorado",
+    "email": "pablolmedorado@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pablolmedorado/zod-chronos.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pablolmedorado/zod-chronos/issues"
+  },
+  "homepage": "https://github.com/pablolmedorado/zod-chronos#readme",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "peerDependencies": {
+    "zod": ">=3.0.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
+    "@js-temporal/polyfill": "^0.4.4",
+    "@total-typescript/tsconfig": "^1.0.4",
+    "@vitest/coverage-v8": "^3.0.5",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.5"
+  }
+}

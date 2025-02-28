@@ -1,0 +1,42 @@
+name: Run tests for different node and zod versions
+
+on:
+  push:
+    branches:
+      - 'release/**'
+      - 'hotfix/**'
+  pull_request:
+    branches:
+      - 'master'
+    types: [opened, synchronize, reopened]
+
+jobs:
+  test:
+    name: Node ${{ matrix.node }} - Zod ${{ matrix.zod }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [14, 16, 18, 20, 22, latest]
+        zod: [3.0.0, 3.22.0, 3.23.0, 3.24.0, latest]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install specific Zod version
+        run: npm install --no-save zod@${{ matrix.zod }}
+
+      - name: Build
+        run: npm run build
+
+      - name: Run tests
+        run: npm run test

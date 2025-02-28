@@ -1,0 +1,11 @@
+{
+  "extends": "@total-typescript/tsconfig/tsc/no-dom/library",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "moduleResolution": "NodeNext",
+    "declarationMap": true,
+    "stripInternal": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "**/*.{test,spec}.ts"]
+}
