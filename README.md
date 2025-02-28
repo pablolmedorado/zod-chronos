@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0%2B-blue)](https://www.typescriptlang.org/)
 [![Zod Peer Dependency](https://img.shields.io/npm/dependency-version/zod-chronos/peer/zod)](https://github.com/colinhacks/zod)
-[![codecov](https://codecov.io/gh/pablolmedorado/zod-chronos/graph/badge.svg?token=6701NLAUR3)](https://codecov.io/gh/pablolmedorado/zod-chronos)
+[![codecov](https://codecov.io/gh/pablolmedorado/zod-chronos/graph/badge.svg?token=3NNA476G29)](https://codecov.io/gh/pablolmedorado/zod-chronos)
 
 [Zod](https://zod.dev) schemas for the JavaScript [Temporal API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Temporal).
 
